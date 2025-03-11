@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Books Library{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Books Library Management</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/books">Books list</a> |
+            <a href="/add-book">Add Book</a>
+        </nav>
+    </header>
+    <hr>
+    {% block content %}{% endblock %}
+    <hr>
+    <footer>
+        &copy; 2025 Books Library
+    </footer>
+</body>
+</html>
