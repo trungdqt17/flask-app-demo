@@ -1,0 +1,23 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+ENV/
+.env
+
+# Flask specific
+instance/
+*.log
+
+# Docker
+docker-compose.override.yml
+
+# Build artifacts
+build/
+dist/
+
+# System files
+.DS_Store
