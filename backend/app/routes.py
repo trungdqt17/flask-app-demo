@@ -38,3 +38,10 @@ def add_book():
         return jsonify({"message": "Book added", "id": new_book.id}), 201
     except ValueError:
         return jsonify({"error": "Invalid date format. Use YYYY-MM-DD"}), 400
+
+@bp.route('/books/<int:book_id>', methods=['DELETE'])
+def delete_book(book_id):
+    book = Book.query.get_or_404(book_id)
+    db.session.delete(book)
+    db.session.commit()
+    return jsonify({"message": "Book deleted"}), 200

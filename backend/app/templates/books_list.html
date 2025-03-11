@@ -10,11 +10,12 @@
             <th>Title</th>
             <th>Author</th>
             <th>Published Date</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         {% for book in books %}
-        <tr>
+        <tr data-book-id="{{ book.id }}">
             <td>{{ book.id }}</td>
             <td>{{ book.title }}</td>
             <td>{{ book.author }}</td>
@@ -27,6 +28,9 @@
                     {% endif %}
                 {% endif %}
             </td>
+            <td>
+                <button onclick="deleteBook('{{ book.id }}')">Delete</button>
+            </td>
         </tr>
         {% endfor %}
     </tbody>
@@ -35,4 +39,8 @@
 {% if not books %}
 <p>No books available.</p>
 {% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/delete_book.js') }}"></script>
 {% endblock %}
